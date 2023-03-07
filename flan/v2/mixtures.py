@@ -25,11 +25,11 @@ seqio.add_global_cache_dirs(constants.CACHE_DIRS)
 
 
 DEFAULT_MIXTURE_MAX_EXAMPLES = {
-    'FLAN': 30000,
-    'T0': 20000,
-    'CoT': 100000,
-    'NIv2': 5000,
-    'Dialog': 200000,
+    'FLAN': 4000,
+    'T0': 3000,
+    'CoT': 1000,
+    'NIv2': 1000,
+    'Dialog': 1000,
 }
 DEFAULT_MIXTURE_MAX_EXAMPLES['CoT-II'] = DEFAULT_MIXTURE_MAX_EXAMPLES['CoT']
 DEFAULT_MIXTURE_MAX_EXAMPLES['Dialog-II'] = DEFAULT_MIXTURE_MAX_EXAMPLES[
