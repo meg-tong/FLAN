@@ -88,3 +88,17 @@ for task in ['FLAN', 'T0', 'CoT', 'Dialog', 'NIv2']:
         override_mix_name=mixture_name,
         task_suffixes=constants.TRAIN_TASK_SUFFIXES,
     )
+
+  seqio.MixtureRegistry.add(
+    f'full_{task.lower()}',
+    tasks=[
+      (f'{task.lower()}_{setting.lower()}', 25) for setting in ['ZSOpt', 'ZSNoOpt', 'FSOpt', 'FSNoOpt']
+    ]
+  )
+
+seqio.MixtureRegistry.add(
+    f'full',
+    tasks=[
+      (f'full_{task.lower()}', DEFAULT_MIXTURE_RATES[task]) for task in ['FLAN', 'T0', 'CoT', 'Dialog', 'NIv2']
+    ]
+)
